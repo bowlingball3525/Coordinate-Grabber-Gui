@@ -1,3 +1,7 @@
+--[[
+	lanc#0001
+--]]
+
 -- Gui to Lua
 -- Version: 3.2
 
@@ -29,7 +33,10 @@ coordgui.Size = UDim2.new(0, 312, 0, 160)
 coordgui.Draggable = true
 coordgui.Active = true
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(57, 104, 252)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(51, 68, 175))}
+UIGradient.Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0.00, Color3.fromRGB(57, 104, 252)),
+	ColorSequenceKeypoint.new(1.00, Color3.fromRGB(51, 68, 175))
+}
 UIGradient.Parent = coordgui
 
 UICorner.CornerRadius = UDim.new(0, 4)
@@ -101,11 +108,9 @@ cords.TextWrapped = true
 game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 
 grab.MouseButton1Down:Connect(function()
-    cords.Text = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-    wait(0.25)
-    print(''..tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
+	cords.Text = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 end)
 
 copy.MouseButton1Down:Connect(function()
-	setclipboard(""..cords.Text)
+	setclipboard("" .. cords.Text)
 end)
