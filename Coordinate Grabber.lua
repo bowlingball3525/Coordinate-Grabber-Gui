@@ -101,9 +101,9 @@ cords.TextWrapped = true
 game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 
 grab.MouseButton1Down:Connect(function()
-	cords.Text = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
-	wait(0.25)
-	print(''..tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
+    cords.Text = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+    wait(0.25)
+    print(''..tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame))
 end)
 
 copy.MouseButton1Down:Connect(function()
